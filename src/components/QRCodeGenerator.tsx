@@ -104,6 +104,7 @@ const QRCodeGenerator = () => {
 
         img.src = 'data:image/svg+xml;base64,' + btoa(svgData);
       } catch (error) {
+        console.error("Erro ao copiar:", error);
         toast.error("Não foi possível copiar o QR code.");
       }
     }
@@ -143,6 +144,7 @@ const QRCodeGenerator = () => {
         img.src = 'data:image/svg+xml;base64,' + btoa(svgData);
       } catch (error) {
         console.error('Erro ao compartilhar:', error);
+        toast.error("Compartilhamento não foi possível.");
       }
     } else {
       toast.error("Compartilhamento não suportado neste navegador.");
